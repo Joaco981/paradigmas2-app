@@ -10,14 +10,14 @@ public class CajaDeAhorroTests
     @Test
     void test1() {
         CajaDeAhorro caja = new CajaDeAhorro();
-        assert caja.saldo() == 0;
+        assert caja.getSaldo() == 0;
     }
     
     @Test
     void test2() {
         CajaDeAhorro caja = new CajaDeAhorro();
         caja.depositar(100);
-        assert caja.saldo() == 100;
+        assert caja.getSaldo() == 100;
     }
 
     @Test
@@ -25,7 +25,7 @@ public class CajaDeAhorroTests
         CajaDeAhorro caja = new CajaDeAhorro();
         caja.depositar(100);
         caja.extraer(10);
-        assert caja.saldo() == 90;
+        assert caja.getSaldo() == 90;
     }
 
     @Test
@@ -43,11 +43,11 @@ public class CajaDeAhorroTests
         CajaDeAhorro caja = new CajaDeAhorro();
         
         Persona persona1 = new Persona();
-        persona1.nombre("Joaquin");
+        persona1.setNombre("Joaquin");
 
         caja.titular(persona1);
 
-        assert caja.titular().nombre() == "Joaquin";
+        assert caja.titular().getNombre() == "Joaquin";
         
     }
  

@@ -3,11 +3,11 @@ package com.example.demo;
 public class Persona {
     private String nombre;
 
-    public void nombre(String valor) {
+    public void setNombre(String valor) {
         nombre = valor;
     }
     
-    public String nombre(){
+    public String getNombre(){
         return nombre;
 
     }

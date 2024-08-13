@@ -6,20 +6,27 @@ public class CajaDeAhorro {
     private Persona titular;
 
     public void depositar(int monto) {
-        saldo += monto;
+        //saldo += monto;
+
+        setSaldo(getSaldo() + monto);
     }
     
-    public int saldo(){
+    private void setSaldo(int valor){
+        saldo = valor;
+    }
+
+    public int getSaldo(){
         return saldo;
 
     }
+
     public int extraer(int monto) {
        
-        if (saldo < monto) {
+        if (getSaldo() < monto) {
             throw new RuntimeException("Saldo insuficiente");
         }
-        saldo -= monto;
-        return saldo;
+        setSaldo(getSaldo() - monto);
+        return getSaldo();
     }
 
     public void titular(Persona valor) {
